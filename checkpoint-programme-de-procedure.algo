@@ -1,0 +1,69 @@
+
+//avec procedure
+PROCEDURE dot-product(VAR ps : integer;)
+VAR v1,v2: ARRAY_OF integer[1];
+BEGIN
+Write("ecrire a")
+read(v1[0])
+Write("ecrire b")
+read(v1[1])
+Write("ecrire c")
+read(v2[0]) 
+Write("ecrire d")
+read(v1[1])
+ps:= ((v1[0]*v2[0)+(v1[1]*v1[1]));
+write (ps)
+END
+
+ALGORITHM orthoghono
+VAR ortho:integer;
+    i:integer:=1;
+BEGIN
+write("ecrire n")
+read(n)
+WHILE (i<=n)) DO
+    
+IF (dot-produt(ortho)=0) THEN
+   "write("les deux vecteurs sont orthogonaux)
+   ELSE
+   write("les deux vecteurs ne sont pas orthogonaux")
+END_IF
+i++
+END_WHILE
+END
+
+
+//avec fonction
+FUNCTION dot-product(ps) : integer
+VAR
+  VAR v1,v2: ARRAY_OF integer[1];
+BEGIN
+Write("ecrire a")
+read(v1[0])
+Write("ecrire b")
+read(v1[1])
+Write("ecrire c")
+read(v2[0]) 
+Write("ecrire d")
+read(v1[1])
+ps:= ((v1[0]*v2[0)+(v1[1]*v1[1]));
+write (ps)
+END
+
+ALGORITHM orthoghono
+VAR ortho:integer;
+    i:integer:=1;
+BEGIN
+write("ecrire n")
+read(n)
+WHILE (i<=n)) DO
+    
+IF (dot-produt(ortho)=0) THEN
+   "write("les deux vecteurs sont orthogonaux)
+   ELSE
+   write("les deux vecteurs ne sont pas orthogonaux")
+END_IF
+i++
+END_WHILE
+END
+
