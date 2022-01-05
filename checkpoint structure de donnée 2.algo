@@ -1,0 +1,116 @@
+///Premier probléme 
+
+ALGORITHM distnct 1
+VAR
+  
+  tab1 : ARRAY_OF INTEGER;
+  tab2 : ARRAY_OF INTEGER;
+  tab3 : ARRAY_OF INTEGER;
+  i,j:INTEGER;
+  som:INTEGER :=0;
+  
+BEGIN
+      
+FOR i FROM 0 TO tab1.length -1 STEP 1  
+       FOR j FROM 0 TO tab2.length -1 STEP 1  DO
+       IF (tab1[i]<>tab2[j]) THEN
+         tab3[i]:=tab1[i]
+         som:=som+tab1[i]
+       END_IF
+       END_FOR
+       END_FOR
+FOR i FROM 0 TO tab2.length -1 STEP 1  
+       FOR j FROM 0 TO tab1.length -1 STEP 1  DO
+       IF (tab2[i]<>tab1[j]) THEN
+         tab3[i]:=tab2[i]
+         som:=som+tab2[i]
+       END_IF
+       END_FOR
+       END_FOR 
+
+Write(som "(éléments distincts"tab3")")     
+
+END
+
+ALGORITHM distnct 2
+VAR
+  htab : HASH_TABLE<integer,INTEGER>;
+  tab1 : ARRAY_OF INTEGER;
+  tab2 : ARRAY_OF INTEGER;
+  tab3 : ARRAY_OF INTEGER;
+  tab4 : ARRAY_OF INTEGER;
+  i:INTEGER;
+  count:INTEGER ;
+  som:INTEGER :=0;
+  
+BEGIN
+   tab3:=tab1+tab2;
+FOR i FROM 0 TO tab3.length -1 STEP 1  DO
+       IF (htab.lookup(tab3[i]) = TRUE) THEN
+           count := htab.get(tab3[i]);
+           htab.insert(tab3[i],count+1);
+           END_FOR
+FOR i FROM 0 TO tab3.length -1 STEP 1  DO
+       IF (htab.get(tab3[i]) = 1) THEN
+           tab4[i]:= tab3[i];
+          END_FOR
+FOR i FROM 0 TO tab4.length -1 STEP 1  DO
+       som:=som+tab4[i];
+          END_FOR
+          Write(som "(éléments distincts"tab4")")
+
+END
+
+
+///Deuxieme probléme 
+
+
+
+
+ALGORITHM somme-egal1
+VAR
+  tab1 : ARRAY_OF INTEGER;
+  tab2 : ARRAY_OF INTEGER;
+  i,j:INTEGER;
+  som:INTEGER :=0;
+  
+BEGIN
+FOR i FROM 0 TO tab1.length -1 STEP 1  
+       FOR j FROM 0 TO tab2.length -1 STEP 1  DO
+       IF (tab1[i]=tab2[j]) THEN
+           som:=som+tab1[i]
+       END_IF
+       END_FOR
+       Write(som)
+END       
+
+
+
+ALGORITHM somme-egal2
+VAR
+  htab : HASH_TABLE<integer,INTEGER>;
+  tab1 : ARRAY_OF INTEGER;
+  tab2 : ARRAY_OF INTEGER;
+  tab3 : ARRAY_OF INTEGER;
+  tab4 : ARRAY_OF INTEGER;
+  i:INTEGER;
+  count:INTEGER ;
+  som:INTEGER :=0;
+  
+BEGIN
+   tab3:=tab1+tab2;
+FOR i FROM 0 TO tab3.length -1 STEP 1  DO
+       IF (htab.lookup(tab3[i]) = TRUE) THEN
+           count := htab.get(tab3[i]);
+           htab.insert(tab3[i],count+1);
+           END_FOR
+FOR i FROM 0 TO tab3.length -1 STEP 1  DO
+       IF (htab.get(tab3[i])>1) THEN
+           tab4[i]:= tab3[i];
+          END_FOR
+FOR i FROM 0 TO tab4.length -1 STEP 1  DO
+       som:=(som+tab4[i])*2;
+          END_FOR
+          Write(som)
+
+END
